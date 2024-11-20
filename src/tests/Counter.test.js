@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Counter from '../components/Counter'; // Adjust the path if necessary
+import Counter from '../components/Counter';
 
 beforeEach(() => {
   render(<Counter />);
@@ -22,7 +22,6 @@ test('clicking + increments the count', () => {
   fireEvent.click(incrementButton);
   expect(countElement).toHaveTextContent('1');
 
-  // Additional check for multiple increments
   fireEvent.click(incrementButton);
   expect(countElement).toHaveTextContent('2');
 });
@@ -34,7 +33,6 @@ test('clicking - decrements the count', () => {
   fireEvent.click(decrementButton);
   expect(countElement).toHaveTextContent('-1');
 
-  // Additional check for multiple decrements
   fireEvent.click(decrementButton);
   expect(countElement).toHaveTextContent('-2');
 });
